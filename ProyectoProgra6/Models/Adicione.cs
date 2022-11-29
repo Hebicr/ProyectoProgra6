@@ -12,26 +12,19 @@ namespace ProyectoProgra6.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Provincia
+    public partial class Adicione
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Provincia()
+        public Adicione()
         {
-            this.Cantons = new HashSet<Canton>();
-            this.Clientes = new HashSet<Cliente>();
+            this.AdicionesxClientes = new HashSet<AdicionesxCliente>();
         }
     
-        public int id_Provincia { get; set; }
-        public string nombre { get; set; }
-        public string usuarioCrea { get; set; }
-        public Nullable<System.DateTime> fechaCrea { get; set; }
-        public string usuarioModifica { get; set; }
-        public Nullable<System.DateTime> fechaModifica { get; set; }
-        public string vc_Estado { get; set; }
+        public int idAdiccion { get; set; }
+        public string Nombre { get; set; }
+        public string Codigo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Canton> Cantons { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Cliente> Clientes { get; set; }
+        public virtual ICollection<AdicionesxCliente> AdicionesxClientes { get; set; }
     }
 }

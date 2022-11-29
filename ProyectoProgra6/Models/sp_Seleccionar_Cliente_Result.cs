@@ -10,17 +10,9 @@
 namespace ProyectoProgra6.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Cliente
+    public partial class sp_Seleccionar_Cliente_Result
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Cliente()
-        {
-            this.AdicionesxClientes = new HashSet<AdicionesxCliente>();
-            this.RegistrosPolizas = new HashSet<RegistrosPoliza>();
-        }
-    
         public int idCliente { get; set; }
         public string Cedula { get; set; }
         public string Genero { get; set; }
@@ -36,13 +28,10 @@ namespace ProyectoProgra6.Models
         public int id_Canton { get; set; }
         public int id_Distrito { get; set; }
         public int id_Usuario { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AdicionesxCliente> AdicionesxClientes { get; set; }
-        public virtual Canton Canton { get; set; }
-        public virtual Distrito Distrito { get; set; }
-        public virtual Provincia Provincia { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RegistrosPoliza> RegistrosPolizas { get; set; }
+        public int id { get; set; }
+        public string usuario { get; set; }
+        public string contrasena { get; set; }
+        public int estado { get; set; }
+        public int idRol { get; set; }
     }
 }

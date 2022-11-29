@@ -27,10 +27,14 @@ namespace ProyectoProgra6.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Adicione> Adiciones { get; set; }
+        public virtual DbSet<AdicionesxCliente> AdicionesxClientes { get; set; }
         public virtual DbSet<Canton> Cantons { get; set; }
         public virtual DbSet<Cliente> Clientes { get; set; }
+        public virtual DbSet<CoberturaPoliza> CoberturaPolizas { get; set; }
         public virtual DbSet<Distrito> Distritoes { get; set; }
         public virtual DbSet<Provincia> Provincias { get; set; }
+        public virtual DbSet<RegistrosPoliza> RegistrosPolizas { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
     
@@ -129,7 +133,7 @@ namespace ProyectoProgra6.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_EliminaCanton", id_CantonParameter);
         }
     
-        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
+        public virtual int sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
         {
             var diagramnameParameter = diagramname != null ?
                 new ObjectParameter("diagramname", diagramname) :
@@ -139,10 +143,10 @@ namespace ProyectoProgra6.Models
                 new ObjectParameter("owner_id", owner_id) :
                 new ObjectParameter("owner_id", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
         }
     
-        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
+        public virtual int sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
         {
             var diagramnameParameter = diagramname != null ?
                 new ObjectParameter("diagramname", diagramname) :
@@ -152,7 +156,7 @@ namespace ProyectoProgra6.Models
                 new ObjectParameter("owner_id", owner_id) :
                 new ObjectParameter("owner_id", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
         }
     
         public virtual ObjectResult<sp_Inserta_Clientes_Result> sp_Inserta_Clientes(string cedula, Nullable<int> genero, Nullable<System.DateTime> fecha_nacimiento, string nombre, string primer_apellido, string segundo_apellido, string direccion_fisica, string telefono_principal, string telefono_secundario, string correo_electronico, Nullable<int> id_provincia, Nullable<int> id_canton, Nullable<int> id_distrito)
@@ -278,6 +282,15 @@ namespace ProyectoProgra6.Models
                 new ObjectParameter("new_diagramname", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
+        }
+    
+        public virtual ObjectResult<sp_Seleccionar_Cliente_Result> sp_Seleccionar_Cliente(Nullable<int> id_usuario)
+        {
+            var id_usuarioParameter = id_usuario.HasValue ?
+                new ObjectParameter("id_usuario", id_usuario) :
+                new ObjectParameter("id_usuario", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_Seleccionar_Cliente_Result>("sp_Seleccionar_Cliente", id_usuarioParameter);
         }
     
         public virtual int sp_upgraddiagrams()

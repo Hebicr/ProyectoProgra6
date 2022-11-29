@@ -18,6 +18,7 @@ namespace ProyectoProgra6.Models
         public Canton()
         {
             this.Distritoes = new HashSet<Distrito>();
+            this.Clientes = new HashSet<Cliente>();
         }
     
         public int id_Canton { get; set; }
@@ -33,5 +34,7 @@ namespace ProyectoProgra6.Models
         public virtual Provincia Provincia { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Distrito> Distritoes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cliente> Clientes { get; set; }
     }
 }
