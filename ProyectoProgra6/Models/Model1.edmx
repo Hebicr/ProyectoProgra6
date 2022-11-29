@@ -4,7 +4,11 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
+<<<<<<< HEAD
     <Schema Namespace="ProyectoProgra6Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+=======
+      <Schema Namespace="ProyectoProgra6Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
         <EntityType Name="Adiciones">
           <Key>
             <PropertyRef Name="idAdiccion" />
@@ -115,8 +119,13 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+<<<<<<< HEAD
         <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+=======
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ProyectoProgra6.dbo.Usuarios' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
         <EntityType Name="Usuarios">
           <Key>
             <PropertyRef Name="id" />
@@ -334,6 +343,9 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
           <Parameter Name="owner_id" Type="int" Mode="In" />
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="sp_Seleccionar_Cliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id_usuario" Type="int" Mode="In" />
+        </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="ProyectoProgra6ModelStoreContainer">
           <EntitySet Name="Adiciones" EntityType="Self.Adiciones" Schema="dbo" store:Type="Tables" />
@@ -367,6 +379,14 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
             <End Role="AdicionesxCliente" EntitySet="AdicionesxCliente" />
           </AssociationSet>
           <AssociationSet Name="fk_AdicionxCliente3" Association="Self.fk_AdicionxCliente3">
+<<<<<<< HEAD
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="AdicionesxCliente" EntitySet="AdicionesxCliente" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ClienteCan" Association="Self.fk_ClienteCan">
+            <End Role="Canton" EntitySet="Canton" />
+=======
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
             <End Role="Clientes" EntitySet="Clientes" />
             <End Role="AdicionesxCliente" EntitySet="AdicionesxCliente" />
           </AssociationSet>
@@ -390,19 +410,43 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
             <End Role="CoberturaPolizas" EntitySet="CoberturaPolizas" />
             <End Role="RegistrosPolizas" EntitySet="RegistrosPolizas" />
           </AssociationSet>
+          <AssociationSet Name="fk_ClienteDis" Association="Self.fk_ClienteDis">
+            <End Role="Distrito" EntitySet="Distrito" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ClientePro" Association="Self.fk_ClientePro">
+            <End Role="Provincia" EntitySet="Provincia" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_registrosClientes" Association="Self.fk_registrosClientes">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="RegistrosPolizas" EntitySet="RegistrosPolizas" />
+          </AssociationSet>
+          <AssociationSet Name="fk_registrosCoberturas" Association="Self.fk_registrosCoberturas">
+            <End Role="CoberturaPolizas" EntitySet="CoberturaPolizas" />
+            <End Role="RegistrosPolizas" EntitySet="RegistrosPolizas" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ProyectoProgra6Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<<<<<<< HEAD
         <EntityType Name="Adiciones">
+=======
+        <EntityType Name="Adicione">
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
           <Key>
             <PropertyRef Name="idAdiccion" />
           </Key>
           <Property Name="idAdiccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+<<<<<<< HEAD
           <NavigationProperty Name="AdicionesxCliente" Relationship="Self.fk_AdicionxCliente" FromRole="Adiciones" ToRole="AdicionesxCliente" />
+=======
+          <NavigationProperty Name="AdicionesxClientes" Relationship="Self.fk_AdicionxCliente" FromRole="Adiciones" ToRole="AdicionesxCliente" />
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
         </EntityType>
         <EntityType Name="AdicionesxCliente">
           <Key>
@@ -411,8 +455,13 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
           <Property Name="idAdicionesxCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idAdicion" Type="Int32" />
           <Property Name="idCliente" Type="Int32" />
+<<<<<<< HEAD
           <NavigationProperty Name="Adiciones" Relationship="Self.fk_AdicionxCliente" FromRole="AdicionesxCliente" ToRole="Adiciones" />
           <NavigationProperty Name="Clientes" Relationship="Self.fk_AdicionxCliente3" FromRole="AdicionesxCliente" ToRole="Clientes" />
+=======
+          <NavigationProperty Name="Adicione" Relationship="Self.fk_AdicionxCliente" FromRole="AdicionesxCliente" ToRole="Adiciones" />
+          <NavigationProperty Name="Cliente" Relationship="Self.fk_AdicionxCliente3" FromRole="AdicionesxCliente" ToRole="Clientes" />
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
         </EntityType>
         <EntityType Name="Canton">
           <Key>
@@ -428,7 +477,11 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
           <Property Name="vc_Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
           <Property Name="id_CantonInec" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Provincia" Relationship="Self.Canton_ref_Provincia" FromRole="Canton" ToRole="Provincia" />
+<<<<<<< HEAD
           <NavigationProperty Name="Distrito" Relationship="Self.Distrito_ref_Canton" FromRole="Canton" ToRole="Distrito" />
+=======
+          <NavigationProperty Name="Distritoes" Relationship="Self.Distrito_ref_Canton" FromRole="Canton" ToRole="Distrito" />
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
           <NavigationProperty Name="Clientes" Relationship="Self.fk_ClienteCan" FromRole="Canton" ToRole="Clientes" />
         </EntityType>
         <EntityType Name="Clientes">
@@ -450,13 +503,21 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
           <Property Name="id_Canton" Type="Int32" Nullable="false" />
           <Property Name="id_Distrito" Type="Int32" Nullable="false" />
           <Property Name="id_Usuario" Type="Int32" Nullable="false" />
+<<<<<<< HEAD
           <NavigationProperty Name="AdicionesxCliente" Relationship="Self.fk_AdicionxCliente3" FromRole="Clientes" ToRole="AdicionesxCliente" />
+=======
+          <NavigationProperty Name="AdicionesxClientes" Relationship="Self.fk_AdicionxCliente3" FromRole="Clientes" ToRole="AdicionesxCliente" />
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
           <NavigationProperty Name="Canton" Relationship="Self.fk_ClienteCan" FromRole="Clientes" ToRole="Canton" />
           <NavigationProperty Name="Distrito" Relationship="Self.fk_ClienteDis" FromRole="Clientes" ToRole="Distrito" />
           <NavigationProperty Name="Provincia" Relationship="Self.fk_ClientePro" FromRole="Clientes" ToRole="Provincia" />
           <NavigationProperty Name="RegistrosPolizas" Relationship="Self.fk_registrosClientes" FromRole="Clientes" ToRole="RegistrosPolizas" />
         </EntityType>
+<<<<<<< HEAD
         <EntityType Name="CoberturaPolizas">
+=======
+        <EntityType Name="CoberturaPoliza">
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
           <Key>
             <PropertyRef Name="idCoberturaPoliza" />
           </Key>
@@ -493,8 +554,30 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
           <Property Name="usuarioModifica" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="fechaModifica" Type="DateTime" Precision="3" />
           <Property Name="vc_Estado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+<<<<<<< HEAD
           <NavigationProperty Name="Canton" Relationship="Self.Canton_ref_Provincia" FromRole="Provincia" ToRole="Canton" />
           <NavigationProperty Name="Clientes" Relationship="Self.fk_ClientePro" FromRole="Provincia" ToRole="Clientes" />
+=======
+          <NavigationProperty Name="Cantons" Relationship="Self.Canton_ref_Provincia" FromRole="Provincia" ToRole="Canton" />
+          <NavigationProperty Name="Clientes" Relationship="Self.fk_ClientePro" FromRole="Provincia" ToRole="Clientes" />
+        </EntityType>
+        <EntityType Name="RegistrosPoliza">
+          <Key>
+            <PropertyRef Name="idRegistroPoliza" />
+          </Key>
+          <Property Name="idRegistroPoliza" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idCoberturaPoliza" Type="Int32" Nullable="false" />
+          <Property Name="idCliente" Type="Int32" Nullable="false" />
+          <Property Name="montoAsegurado" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="porcentajeCobertura" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="numeroAdiciones" Type="Int32" />
+          <Property Name="montoAdiciones" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="primaAntesImpuestos" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="impuestos" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="primaFinal" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Cliente" Relationship="Self.fk_registrosClientes" FromRole="RegistrosPolizas" ToRole="Clientes" />
+          <NavigationProperty Name="CoberturaPoliza" Relationship="Self.fk_registrosCoberturas" FromRole="RegistrosPolizas" ToRole="CoberturaPolizas" />
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
         </EntityType>
         <EntityType Name="RegistrosPolizas">
           <Key>
@@ -526,19 +609,31 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
         <EntityType Name="Usuarios">
           <Key>
             <PropertyRef Name="id" />
+<<<<<<< HEAD
             <PropertyRef Name="usuario" />
+=======
+            <PropertyRef Name="usuario1" />
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
             <PropertyRef Name="contrasena" />
             <PropertyRef Name="estado" />
             <PropertyRef Name="idRol" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
+<<<<<<< HEAD
           <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+=======
+          <Property Name="usuario1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
           <Property Name="contrasena" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="estado" Type="Int32" Nullable="false" />
           <Property Name="idRol" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="fk_AdicionxCliente">
+<<<<<<< HEAD
           <End Role="Adiciones" Type="Self.Adiciones" Multiplicity="0..1" />
+=======
+          <End Role="Adiciones" Type="Self.Adicione" Multiplicity="0..1" />
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
           <End Role="AdicionesxCliente" Type="Self.AdicionesxCliente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Adiciones">
@@ -550,7 +645,11 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_AdicionxCliente3">
+<<<<<<< HEAD
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="0..1" />
+=======
+          <End Role="Clientes" Type="Self.Cliente" Multiplicity="0..1" />
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
           <End Role="AdicionesxCliente" Type="Self.AdicionesxCliente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Clientes">
@@ -587,7 +686,11 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
         </Association>
         <Association Name="fk_ClienteCan">
           <End Role="Canton" Type="Self.Canton" Multiplicity="1" />
+<<<<<<< HEAD
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
+=======
+          <End Role="Clientes" Type="Self.Cliente" Multiplicity="*" />
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
           <ReferentialConstraint>
             <Principal Role="Canton">
               <PropertyRef Name="id_Canton" />
@@ -599,7 +702,11 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
         </Association>
         <Association Name="fk_ClienteDis">
           <End Role="Distrito" Type="Self.Distrito" Multiplicity="1" />
+<<<<<<< HEAD
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
+=======
+          <End Role="Clientes" Type="Self.Cliente" Multiplicity="*" />
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
           <ReferentialConstraint>
             <Principal Role="Distrito">
               <PropertyRef Name="id_Distrito" />
@@ -611,7 +718,11 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
         </Association>
         <Association Name="fk_ClientePro">
           <End Role="Provincia" Type="Self.Provincia" Multiplicity="1" />
+<<<<<<< HEAD
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
+=======
+          <End Role="Clientes" Type="Self.Cliente" Multiplicity="*" />
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
           <ReferentialConstraint>
             <Principal Role="Provincia">
               <PropertyRef Name="id_Provincia" />
@@ -622,8 +733,13 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_registrosClientes">
+<<<<<<< HEAD
           <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
           <End Role="RegistrosPolizas" Type="Self.RegistrosPolizas" Multiplicity="*" />
+=======
+          <End Role="Clientes" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="RegistrosPolizas" Type="Self.RegistrosPoliza" Multiplicity="*" />
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
           <ReferentialConstraint>
             <Principal Role="Clientes">
               <PropertyRef Name="idCliente" />
@@ -634,8 +750,13 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_registrosCoberturas">
+<<<<<<< HEAD
           <End Role="CoberturaPolizas" Type="Self.CoberturaPolizas" Multiplicity="1" />
           <End Role="RegistrosPolizas" Type="Self.RegistrosPolizas" Multiplicity="*" />
+=======
+          <End Role="CoberturaPolizas" Type="Self.CoberturaPoliza" Multiplicity="1" />
+          <End Role="RegistrosPolizas" Type="Self.RegistrosPoliza" Multiplicity="*" />
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
           <ReferentialConstraint>
             <Principal Role="CoberturaPolizas">
               <PropertyRef Name="idCoberturaPoliza" />
@@ -646,6 +767,7 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ProyectoProgra6Entities" annotation:LazyLoadingEnabled="true">
+<<<<<<< HEAD
           <EntitySet Name="Adiciones" EntityType="Self.Adiciones" />
           <EntitySet Name="AdicionesxCliente" EntityType="Self.AdicionesxCliente" />
           <EntitySet Name="Canton" EntityType="Self.Canton" />
@@ -663,6 +785,25 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
           <AssociationSet Name="fk_AdicionxCliente3" Association="Self.fk_AdicionxCliente3">
             <End Role="Clientes" EntitySet="Clientes" />
             <End Role="AdicionesxCliente" EntitySet="AdicionesxCliente" />
+=======
+          <EntitySet Name="Adiciones" EntityType="Self.Adicione" />
+          <EntitySet Name="AdicionesxClientes" EntityType="Self.AdicionesxCliente" />
+          <EntitySet Name="Cantons" EntityType="Self.Canton" />
+          <EntitySet Name="Clientes" EntityType="Self.Cliente" />
+          <EntitySet Name="CoberturaPolizas" EntityType="Self.CoberturaPoliza" />
+          <EntitySet Name="Distritoes" EntityType="Self.Distrito" />
+          <EntitySet Name="Provincias" EntityType="Self.Provincia" />
+          <EntitySet Name="RegistrosPolizas" EntityType="Self.RegistrosPoliza" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+          <AssociationSet Name="fk_AdicionxCliente" Association="Self.fk_AdicionxCliente">
+            <End Role="Adiciones" EntitySet="Adiciones" />
+            <End Role="AdicionesxCliente" EntitySet="AdicionesxClientes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_AdicionxCliente3" Association="Self.fk_AdicionxCliente3">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="AdicionesxCliente" EntitySet="AdicionesxClientes" />
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
           </AssociationSet>
           <AssociationSet Name="Canton_ref_Provincia" Association="Self.Canton_ref_Provincia">
             <End Role="Provincia" EntitySet="Provincia" />
@@ -673,6 +814,7 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
             <End Role="Distrito" EntitySet="Distrito" />
           </AssociationSet>
           <AssociationSet Name="fk_ClienteCan" Association="Self.fk_ClienteCan">
+<<<<<<< HEAD
             <End Role="Canton" EntitySet="Canton" />
             <End Role="Clientes" EntitySet="Clientes" />
           </AssociationSet>
@@ -682,6 +824,17 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
           </AssociationSet>
           <AssociationSet Name="fk_ClientePro" Association="Self.fk_ClientePro">
             <End Role="Provincia" EntitySet="Provincia" />
+=======
+            <End Role="Canton" EntitySet="Cantons" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ClienteDis" Association="Self.fk_ClienteDis">
+            <End Role="Distrito" EntitySet="Distritoes" />
+            <End Role="Clientes" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ClientePro" Association="Self.fk_ClientePro">
+            <End Role="Provincia" EntitySet="Provincias" />
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
             <End Role="Clientes" EntitySet="Clientes" />
           </AssociationSet>
           <AssociationSet Name="fk_registrosClientes" Association="Self.fk_registrosClientes">
@@ -721,11 +874,11 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
           <FunctionImport Name="sp_EliminaCanton">
           <Parameter Name="id_Canton" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(ProyectoProgra6Model.sp_helpdiagramdefinition_Result)">
+          <FunctionImport Name="sp_helpdiagramdefinition">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(ProyectoProgra6Model.sp_helpdiagrams_Result)">
+          <FunctionImport Name="sp_helpdiagrams">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -763,6 +916,9 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Seleccionar_Cliente" ReturnType="Collection(ProyectoProgra6Model.sp_Seleccionar_Cliente_Result)">
+            <Parameter Name="id_usuario" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
           <FunctionImport Name="sp_getCoberturaPolizas" ReturnType="Collection(ProyectoProgra6Model.sp_getCoberturaPolizas_Result)" />
@@ -817,21 +973,11 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
           <Property Type="DateTime" Name="fechaModifica" Nullable="true" Precision="23" />
           <Property Type="String" Name="vc_Estado" Nullable="true" MaxLength="3" />
         </ComplexType>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
         <ComplexType Name="sp_Inserta_Clientes_Result">
           <Property Type="String" Name="usuario" Nullable="false" MaxLength="50" />
           <Property Type="String" Name="contrasena" Nullable="false" MaxLength="50" />
         </ComplexType>
+<<<<<<< HEAD
         <ComplexType Name="sp_getCoberturaPolizas_Result">
           <Property Type="Int32" Name="idCoberturaPoliza" Nullable="false" />
           <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
@@ -843,6 +989,29 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
           <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="50" />
           <Property Type="Decimal" Name="Porcentaje" Nullable="true" Precision="18" Scale="0" />
+=======
+        <ComplexType Name="sp_Seleccionar_Cliente_Result">
+          <Property Type="Int32" Name="idCliente" Nullable="false" />
+          <Property Type="String" Name="Cedula" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Genero" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="FechadeNacimiento" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PrimerApellido" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="SegundoApellido" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="DireccionFisica" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="TelefonoPrincipal" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TelefonoSecundario" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="CorreoElectronico" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="id_Provincia" Nullable="false" />
+          <Property Type="Int32" Name="id_Canton" Nullable="false" />
+          <Property Type="Int32" Name="id_Distrito" Nullable="false" />
+          <Property Type="Int32" Name="id_Usuario" Nullable="false" />
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="usuario" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="contrasena" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="estado" Nullable="false" />
+          <Property Type="Int32" Name="idRol" Nullable="false" />
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -851,7 +1020,11 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ProyectoProgra6ModelStoreContainer" CdmEntityContainer="ProyectoProgra6Entities">
           <EntitySetMapping Name="Adiciones">
+<<<<<<< HEAD
             <EntityTypeMapping TypeName="ProyectoProgra6Model.Adiciones">
+=======
+            <EntityTypeMapping TypeName="ProyectoProgra6Model.Adicione">
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
               <MappingFragment StoreEntitySet="Adiciones">
                 <ScalarProperty Name="idAdiccion" ColumnName="idAdiccion" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -859,7 +1032,11 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+<<<<<<< HEAD
           <EntitySetMapping Name="AdicionesxCliente">
+=======
+          <EntitySetMapping Name="AdicionesxClientes">
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
             <EntityTypeMapping TypeName="ProyectoProgra6Model.AdicionesxCliente">
               <MappingFragment StoreEntitySet="AdicionesxCliente">
                 <ScalarProperty Name="idAdicionesxCliente" ColumnName="idAdicionesxCliente" />
@@ -868,7 +1045,11 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+<<<<<<< HEAD
           <EntitySetMapping Name="Canton">
+=======
+          <EntitySetMapping Name="Cantons">
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
             <EntityTypeMapping TypeName="ProyectoProgra6Model.Canton">
               <MappingFragment StoreEntitySet="Canton">
                 <ScalarProperty Name="id_Canton" ColumnName="id_Canton" />
@@ -901,6 +1082,19 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
                 <ScalarProperty Name="id_Canton" ColumnName="id_Canton" />
                 <ScalarProperty Name="id_Distrito" ColumnName="id_Distrito" />
                 <ScalarProperty Name="id_Usuario" ColumnName="id_Usuario" />
+<<<<<<< HEAD
+=======
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoberturaPolizas">
+            <EntityTypeMapping TypeName="ProyectoProgra6Model.CoberturaPoliza">
+              <MappingFragment StoreEntitySet="CoberturaPolizas">
+                <ScalarProperty Name="idCoberturaPoliza" ColumnName="idCoberturaPoliza" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Porcentaje" ColumnName="Porcentaje" />
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -943,7 +1137,11 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RegistrosPolizas">
+<<<<<<< HEAD
             <EntityTypeMapping TypeName="ProyectoProgra6Model.RegistrosPolizas">
+=======
+            <EntityTypeMapping TypeName="ProyectoProgra6Model.RegistrosPoliza">
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
               <MappingFragment StoreEntitySet="RegistrosPolizas">
                 <ScalarProperty Name="idRegistroPoliza" ColumnName="idRegistroPoliza" />
                 <ScalarProperty Name="idCoberturaPoliza" ColumnName="idCoberturaPoliza" />
@@ -1029,25 +1227,8 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
           <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="ProyectoProgra6Model.Store.sp_creatediagram" />
           <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="ProyectoProgra6Model.Store.sp_dropdiagram" />
           <FunctionImportMapping FunctionImportName="sp_EliminaCanton" FunctionName="ProyectoProgra6Model.Store.sp_EliminaCanton" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="ProyectoProgra6Model.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ProyectoProgra6Model.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="ProyectoProgra6Model.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ProyectoProgra6Model.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="ProyectoProgra6Model.Store.sp_helpdiagramdefinition" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="ProyectoProgra6Model.Store.sp_helpdiagrams" />
           <FunctionImportMapping FunctionImportName="sp_Inserta_Clientes" FunctionName="ProyectoProgra6Model.Store.sp_Inserta_Clientes">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ProyectoProgra6Model.sp_Inserta_Clientes_Result">
@@ -1060,6 +1241,32 @@ advertencia 6002: La tabla o vista 'ProyectoProgra6.dbo.Usuarios' no tiene defin
           <FunctionImportMapping FunctionImportName="sp_Login" FunctionName="ProyectoProgra6Model.Store.sp_Login" />
           <FunctionImportMapping FunctionImportName="sp_ModificaCanton" FunctionName="ProyectoProgra6Model.Store.sp_ModificaCanton" />
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="ProyectoProgra6Model.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_Seleccionar_Cliente" FunctionName="ProyectoProgra6Model.Store.sp_Seleccionar_Cliente">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoProgra6Model.sp_Seleccionar_Cliente_Result">
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Genero" ColumnName="Genero" />
+                <ScalarProperty Name="FechadeNacimiento" ColumnName="FechadeNacimiento" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PrimerApellido" ColumnName="PrimerApellido" />
+                <ScalarProperty Name="SegundoApellido" ColumnName="SegundoApellido" />
+                <ScalarProperty Name="DireccionFisica" ColumnName="DireccionFisica" />
+                <ScalarProperty Name="TelefonoPrincipal" ColumnName="TelefonoPrincipal" />
+                <ScalarProperty Name="TelefonoSecundario" ColumnName="TelefonoSecundario" />
+                <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+                <ScalarProperty Name="id_Provincia" ColumnName="id_Provincia" />
+                <ScalarProperty Name="id_Canton" ColumnName="id_Canton" />
+                <ScalarProperty Name="id_Distrito" ColumnName="id_Distrito" />
+                <ScalarProperty Name="id_Usuario" ColumnName="id_Usuario" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="ProyectoProgra6Model.Store.sp_upgraddiagrams" />
           <FunctionImportMapping FunctionImportName="sp_getCoberturaPolizas" FunctionName="ProyectoProgra6Model.Store.sp_getCoberturaPolizas">
             <ResultMapping>

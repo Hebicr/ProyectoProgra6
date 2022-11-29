@@ -14,6 +14,7 @@ namespace ProyectoProgra6.Models
     
     public partial class Adicione
     {
+<<<<<<<< HEAD:ProyectoProgra6/Models/Adicione.cs
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Adicione()
         {
@@ -26,5 +27,12 @@ namespace ProyectoProgra6.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AdicionesxCliente> AdicionesxClientes { get; set; }
+========
+        public int id { get; set; }
+        public string usuario1 { get; set; }
+        public string contrasena { get; set; }
+        public int estado { get; set; }
+        public int idRol { get; set; }
+>>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371:ProyectoProgra6/Models/Usuario.cs
     }
 }

@@ -17,7 +17,11 @@ namespace ProyectoProgra6.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Distrito()
         {
+<<<<<<< HEAD
             this.Clientes = new HashSet<Clientes>();
+=======
+            this.Clientes = new HashSet<Cliente>();
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
         }
     
         public int id_Distrito { get; set; }
@@ -32,6 +36,10 @@ namespace ProyectoProgra6.Models
     
         public virtual Canton Canton { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+<<<<<<< HEAD
         public virtual ICollection<Clientes> Clientes { get; set; }
+=======
+        public virtual ICollection<Cliente> Clientes { get; set; }
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
     }
 }

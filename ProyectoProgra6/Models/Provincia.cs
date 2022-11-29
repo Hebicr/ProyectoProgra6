@@ -17,8 +17,13 @@ namespace ProyectoProgra6.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Provincia()
         {
+<<<<<<< HEAD
             this.Canton = new HashSet<Canton>();
             this.Clientes = new HashSet<Clientes>();
+=======
+            this.Cantons = new HashSet<Canton>();
+            this.Clientes = new HashSet<Cliente>();
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
         }
     
         public int id_Provincia { get; set; }
@@ -30,8 +35,14 @@ namespace ProyectoProgra6.Models
         public string vc_Estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+<<<<<<< HEAD
         public virtual ICollection<Canton> Canton { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Clientes> Clientes { get; set; }
+=======
+        public virtual ICollection<Canton> Cantons { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cliente> Clientes { get; set; }
+>>>>>>> 8eecfa87621eb648cc244f03d152c1c03fb39371
     }
 }
