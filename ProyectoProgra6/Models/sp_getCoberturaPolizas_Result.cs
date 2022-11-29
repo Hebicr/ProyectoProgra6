@@ -11,9 +11,11 @@ namespace ProyectoProgra6.Models
 {
     using System;
     
-    public partial class sp_Inserta_Clientes_Result
+    public partial class sp_getCoberturaPolizas_Result
     {
-        public string usuario { get; set; }
-        public string contrasena { get; set; }
+        public int idCoberturaPoliza { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+        public Nullable<decimal> Porcentaje { get; set; }
     }
 }
