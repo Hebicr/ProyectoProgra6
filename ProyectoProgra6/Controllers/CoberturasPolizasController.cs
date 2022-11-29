@@ -46,11 +46,11 @@ namespace ProyectoProgra6.Controllers
         //LA VISTA DEL EDITAR PARA CARGAR LOS DATOS
         public ActionResult Editar(int idCoberturaPoliza)
         {
-            CoberturaPolizas cobertura  = (from c in db.CoberturaPolizas where idCoberturaPoliza == c.idCoberturaPoliza select c).First();
-            return View(cobertura);
-
-            //var cobertura = db.sp_getCoberturaPolizasEditar(idCoberturaPoliza);
+            //CoberturaPolizas cobertura  = (from c in db.CoberturaPolizas where idCoberturaPoliza == c.idCoberturaPoliza select c).First();
             //return View(cobertura);
+
+            var cobertura = db.sp_getCoberturaPolizasEditar(idCoberturaPoliza);
+            return View(cobertura);
         }
 
         // HTTPPOST PARA ENVIAR LA INFORMACION DEL EDITAR 
